@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+}
+
+group 'pl.robert'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.14'
+    testImplementation "org.spockframework:spock-core:2.0-M2-groovy-3.0"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat = 'full'
+        events = ["passed", "failed", "skipped"]
+    }
+}
