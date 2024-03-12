@@ -12,12 +12,16 @@ repositories {
 dependencies {
     implementation 'org.apache.groovy:groovy:4.0.14'
     testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+    testImplementation platform("org.junit:junit-bom:5.10.0")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "org.assertj:assertj-core:3.25.1"
 }
 
 test {
     useJUnitPlatform()
     testLogging {
         exceptionFormat = 'full'
+        showStandardStreams = true
         events = ["passed", "failed", "skipped"]
     }
 }
